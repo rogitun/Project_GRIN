@@ -65,7 +65,7 @@ def how(request):
     return render(request,'how.html')
 
 def detail(request,pk):
-    post = TrashCan.objects.get(tc_id=pk)
+    post = TrashCan.objects.get(id=pk)
     form = ReviewForm()
     
     if request.method == 'POST':
@@ -75,7 +75,7 @@ def detail(request,pk):
             review.post = post
             review.owner = request.user.profile
             review.save()
-            return redirect('detail',pk=post.tc_id)
+            return redirect('detail',pk=post.id)
     
     
     return render(request,'detail.html',{"post":post,"form":form,"id":pk})
@@ -83,7 +83,7 @@ def detail(request,pk):
 def deleteReview(request,pk):
     profile = request.user.profile
     review = profile.review_set.get(id=pk)
-    key = review.post.tc_id
+    key = review.post.id
     
     if request.method == 'POST':
         review.delete()

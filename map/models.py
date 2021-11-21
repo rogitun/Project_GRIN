@@ -2,7 +2,7 @@ from django.db import models
 from users.models import Profile
 
 class TrashCan(models.Model):
-    tc_id=models.IntegerField(primary_key=True)
+    id=models.AutoField(primary_key=True)
     tc_town_num=models.IntegerField(null=True)
     tc_town=models.CharField(null=True,max_length=32,default="NoInput")
     tc_road=models.CharField(null=True,max_length=128,default="NoInput")

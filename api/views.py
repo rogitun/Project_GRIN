@@ -18,6 +18,6 @@ def getByTown(request,num):
 
 @api_view(['GET'])
 def getById(request,num):
-    tc = TrashCan.objects.get(tc_id=num)
+    tc = TrashCan.objects.get(id=num)
     serializer = TrashSerializer(tc,many=False)
     return Response(serializer.data)

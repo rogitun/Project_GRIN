@@ -20,7 +20,7 @@ class Review(models.Model):
     post = models.ForeignKey(TrashCan,on_delete=models.CASCADE)
     body = models.TextField(null=True)
     created = models.DateTimeField(auto_now_add=True)
-    id = models.IntegerField(primary_key=True) 
+    id = models.AutoField(primary_key=True) 
     
     def __str__(self):
         return self.body

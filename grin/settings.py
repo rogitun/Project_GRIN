@@ -22,7 +22,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # SECURITY WARNING: keep the secret key used in production secret!
 SECRET_KEY = 'django-insecure-(^*z2&*v+@0dn$sh!p6n68xeqi9@m*#11k)-*&3uiol2v1j+4g'
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = os.environ.get('DEBUG')
+DEBUG = False
 
 ALLOWED_HOSTS = ['*']
 
@@ -83,8 +83,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'grin',
         'USER':'hansel',
-        'PASSWORD': os.environ.get('DB_PASS'),
-        'HOST':os.environ.get('DB_HOST'),
+        'PASSWORD': 'ghkd0045',
+        'HOST':'database-1.cgvf4e26vukk.ap-northeast-2.rds.amazonaws.com',
         'PORT':'5432',
     }
 }
@@ -131,11 +131,6 @@ USE_TZ = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = True
 
-CORS_ORIGIN_WHITELIST = [
-    "https://syugrin.herokuapp.com/",
-    "http://localhost:8080",
-    "http://127.0.0.1:8000"
-]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
@@ -155,12 +150,9 @@ EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
 EMAIL_HOST_USER = 'syuniv.grin@gmail.com'
-EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_PASS')
+EMAIL_HOST_PASSWORD = 'wziybyncoftllnvq'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-
-if os.getcwd() == '/app':
-    DEBUG = False

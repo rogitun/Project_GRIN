@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ui/login.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+            <a href="{% url 'home' %}"><img src="{% static 'images/web_logo.png' %}" height="42"></a>
+            <div class="one">
+                <p>비밀번호 재설정 메일이 발송되었습니다.</p>
+            </div>
+            <a href="{% url 'home' %}"><input type="submit" value="메인 화면으로"></a>
+    </div>
+</body>
+</html>

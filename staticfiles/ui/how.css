@@ -1,0 +1,490 @@
+@import url(//fonts.googleapis.com/earlyaccess/notosanskr.css);
+
+/* 450이하 일때 네브바 */
+
+.navbarup {
+   display: none;
+}
+
+.navbardown {
+   display: none;
+}
+
+.notosanskr * { 
+ font-family: 'Noto Sans KR', sans-serif;
+}
+
+/* navbar CSS */
+body {
+   margin: 0;
+   padding: 0;
+}
+
+a {
+   font-size: 0;
+}
+
+.navbar {
+   background-image: url('web_up.png');
+   background-size : 100% 100%;
+   display: flex;
+   align-items: center;
+   padding: 1.5px 2rem 0px 0px;
+}
+
+.navbar-logo{
+  padding: 0px 30px;
+}
+
+.search-box{
+   background: #ffffff;
+   height: 20px;
+   border-radius: 40px;
+   border: 3px solid #5FC891;
+   width: 35%;
+   padding: 10px 30px;
+   display: flex;
+}
+
+.search-btn{
+   padding: 0px 0px 0px 15px;
+   color:#5FC891;
+   width: 30px; height: 20px;
+   border-radius: 50%;
+   background:#ffffff;
+}
+
+.search-txt {
+   border : none;
+   background : none;
+   outline: none;
+   /* float: right; */
+   margin: 0;
+   padding: 0px 0px;
+   color: rgb(0, 0, 0);
+   font-size: 16px;
+   line-height: 20px;
+   width: 100%;
+}
+
+.navbar_button {
+   padding: 40px 20px 30px 0px;
+}
+
+.navbar_photo {
+   margin-left: auto;
+ }
+
+
+/* 내용 CSS */
+body {
+   background-color: #60BC8B;
+}
+
+.box {
+   display: flex;
+   justify-content: space-between;
+   width: 100%;
+   height: auto;
+   padding: 0px 0px;
+}
+
+.box1 {
+   width: 50%;
+   height: auto;
+   background: #ffffff;
+   border-left: 80px solid #60BC8B;
+   border-right: 4px solid #60BC8B;
+
+}
+
+.box2 {
+   background-color: #FFFFFF;
+   width: 50%;
+   height: auto;
+   border-left: 4px solid #60BC8B;
+   border-right: 80px solid #60BC8B;
+}
+
+
+td, th {
+   vertical-align : middle;
+   font-family: 'Noto Sans KR', sans-serif;
+   font-size: 17px;
+   line-height: 145%;
+}
+
+.nono {
+   text-align: center;
+   width: 185px;
+   padding-bottom: 20px;
+}
+
+.cont {
+   padding-top: 40px;
+   padding-bottom: 40px;
+}
+
+.cont2 {
+   font-size: 20px;
+}
+
+.boxda {
+   display: none;
+}
+
+
+/* 스크롤 CSS */
+::-webkit-scrollbar { width: 13px; /*스크롤바의 너비*/ } 
+::-webkit-scrollbar-thumb { 
+   background-color: #296847; /*스크롤바의 색상*/ 
+   border-radius: 10px;
+}
+::-webkit-scrollbar-track {
+   background-color: #60BC8B; /*스크롤바 트랙 색상*/ 
+   border-radius: 10px;
+}
+
+
+
+@media screen and (min-width:450px) and (max-width: 1024px) {
+
+    .search-box {
+       width: 80%;
+    }
+
+   .navbar_photo {
+      display: none;
+    }
+
+   .box {
+      display: flex;
+      justify-content: stretch;
+      flex-direction: column;
+   }
+
+   .box1 {
+      width: 100%;
+      background: #ffffff;
+      border-left: 0px solid #60BC8B;
+      border-right: 0px solid #60BC8B;
+   
+   }
+   
+   .box2 {
+      background-color: #FFFFFF;
+      width: 100%;
+      border-left: 0px solid #60BC8B;
+      border-right: 0px solid #60BC8B;
+   }
+
+   td, th {
+      font-size: 15px;
+   }
+
+   .cont {
+      padding-top: 20px;
+      padding-bottom: 20px;
+   }
+
+   .cont2 {
+      font-size: 17px;
+   }
+   
+
+   ::-webkit-scrollbar { width: 10px; } 
+   ::-webkit-scrollbar-track { background-color: #ffffff; }
+
+
+}
+
+@media screen and (min-width:321px) and (max-width: 449px) {
+
+   .navbar {
+      display: none;
+   }
+
+   body {
+      background-color: #ffffff;
+   }
+
+   .navbarup {
+      background-image: url('앱 - 상단 바.png');
+      background-size : 100% 100%;
+      display: flex;
+      align-items: center;
+      padding: 12px 24px;
+   }
+   
+   .navbarup-logo{
+     padding: 0px 15px 0px 0px;
+   }
+   
+   .searchup-box{
+      background: #ffffff;
+      height: 20px;
+      border-radius: 40px;
+      border: 3px solid #5FC891;
+      width: 90%;
+      padding: 6px 20px;
+      display: flex;
+   }
+   
+   .searchup-btn{
+      color:#5FC891;
+      width: 30px; height: 10px;
+      border-radius: 50%;
+      background:#ffffff;
+      text-align: center;
+   }
+   
+   .searchup-txt {
+      border : none;
+      background : none;
+      outline: none;
+      /* float: right; */
+      margin: 0;
+      padding: 0px 0px;
+      color: rgb(0, 0, 0);
+      font-size: 14.4px;
+      line-height: 20px;
+      width: 100%;
+   }
+  
+   .navbardown {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-image: url('앱 - 하단 바.png');
+      background-size : 100% 100%;
+      
+      align-items: center;
+      height: 62px;
+      padding: 0px 0px; 
+      justify-content: space-evenly;
+      display: block;
+      display: flex;
+  }
+  
+  .navbardown_button {
+      padding: 0;
+      font-size: 0;
+  }
+  
+   /* .box {
+      display: flex;
+      justify-content: stretch;
+      flex-direction: column;
+   }
+
+   .box1 {
+      width: 100%;
+      background: #ffffff;
+      border-left: 0px solid #60BC8B;
+      border-right: 0px solid #60BC8B;
+   
+   }
+   
+   .box2 {
+      background-color: #FFFFFF;
+      width: 100%;
+      border-left: 0px solid #60BC8B;
+      border-right: 0px solid #60BC8B;
+   }
+
+   td, th {
+      font-size: 15px;
+   }
+
+   .cont {
+      padding-top: 20px;
+      padding-bottom: 20px;
+   }
+
+   .cont2 {
+      font-size: 17px;
+   }
+
+   .justone {
+      padding-bottom: 82px;
+   } */
+
+   .box {
+      display: none;
+   }
+
+   .boxda {
+      display: block;
+      padding: 17px 0px 82px 0px;
+  }
+  
+  table {
+      vertical-align : middle;
+      font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .headname {
+      font-size: 17px;
+  }
+  
+  .photophoto {
+      padding: 20px 0px 0px 0px;
+      text-align: center;
+  }
+  
+  .longcoment {
+      font-size: 14px;
+  }
+
+   ::-webkit-scrollbar { width: 10px; } 
+   ::-webkit-scrollbar-track { background-color: #ffffff; }
+
+}
+
+
+@media screen and (max-width:320px) {
+   .navbar {
+      display: none;
+   }
+
+   body {
+      background-color: #ffffff;
+   }
+
+   .navbarup {
+      background-image: url('앱 - 상단 바.png');
+      background-size : 100% 100%;
+      display: flex;
+      align-items: center;
+      padding: 12px 24px;
+   }
+   
+   .navbarup-logo{
+     padding: 0px 15px 0px 0px;
+   }
+   
+   .searchup-box{
+      background: #ffffff;
+      height: 20px;
+      border-radius: 40px;
+      border: 3px solid #5FC891;
+      width: 90%;
+      padding: 6px 20px;
+      display: flex;
+   }
+   
+   .searchup-btn{
+      color:#5FC891;
+      width: 30px; height: 10px;
+      border-radius: 50%;
+      background:#ffffff;
+      text-align: center;
+   }
+   
+   .searchup-txt {
+      border : none;
+      background : none;
+      outline: none;
+      /* float: right; */
+      margin: 0;
+      padding: 0px 0px;
+      color: rgb(0, 0, 0);
+      font-size: 14.4px;
+      line-height: 20px;
+      width: 100%;
+   }
+  
+   .navbardown {
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+      background-image: url('앱 - 하단 바.png');
+      background-size : 100% 100%;
+      align-items: center;
+      height: 62px;
+      padding: 0px 0px; 
+      justify-content: center;
+      display: block;
+      display: flex;
+  }
+
+  .navbardown_photo {
+     display: none;
+  }
+  
+  .navbardown_button {
+      padding: 0;
+      font-size: 0;
+  }
+  
+   /* .box {
+      display: flex;
+      justify-content: stretch;
+      flex-direction: column;
+   }
+
+   .box1 {
+      width: 100%;
+      background: #ffffff;
+      border-left: 0px solid #60BC8B;
+      border-right: 0px solid #60BC8B;
+   
+   }
+   
+   .box2 {
+      background-color: #FFFFFF;
+      width: 100%;
+      border-left: 0px solid #60BC8B;
+      border-right: 0px solid #60BC8B;
+   }
+
+   td, th {
+      font-size: 15px;
+   }
+
+   .cont {
+      padding-top: 10px;
+      padding-bottom: 20px;
+   }
+
+   .cont2 {
+      font-size: 17px;
+   }
+   
+   .justone {
+      padding-bottom: 82px;
+   }
+
+   ::-webkit-scrollbar { width: 10px; } 
+   ::-webkit-scrollbar-track { background-color: #ffffff; } */
+
+   .box {
+      display: none;
+   }
+
+   .boxda {
+      display: block;
+      padding: 17px 0px 82px 0px;
+  }
+  
+  table {
+      vertical-align : middle;
+      font-family: 'Noto Sans KR', sans-serif;
+  }
+  
+  .headname {
+      font-size: 16px;
+  }
+  
+  .photophoto {
+      padding: 20px 0px 0px 0px;
+      text-align: center;
+  }
+  
+  .longcoment {
+      font-size: 13px;
+  }
+
+   ::-webkit-scrollbar { width: 10px; } 
+   ::-webkit-scrollbar-track { background-color: #ffffff; }
+}

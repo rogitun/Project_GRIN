@@ -1,0 +1,159 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ui/how.css' %}">
+    <title>분리수거 방법</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <!-- 분리수거 표시 -->
+    <div class="box">
+        <div class="box1">
+            <table width ="90%" height="auto" align = "center" >
+                <tr>
+                    <td class="cont"><img src="{% static 'images/web_how.png' %}"></td>
+                    <td class="cont2"><b>-일반쓰레기</b></td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r15.png' %}"></td>
+                    <td><b>알약 포장재 : </b>알약 포장재는 복수의 재질(플라스틱+알루미늄)로 만들어져 각각 분리하여 재활용은 가능하지만, 복수의 재질을 분리하기 어려우므로 일반쓰레기로 버린다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r16.png' %}"></td>
+                    <td><b>음식물이 담긴 용기 : </b>세척되지 않은 용기는 재활용을 할 수 없으므로, 이물질 제거가 어렵다면 일반쓰레기로 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r14.png' %}"></td>
+                    <td><b>비닐 랩 : </b>일반쓰레기로 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r17.png' %}"></td>
+                    <td><b>플라스틱 칫솔 : </b>하나의 제품에 여러 재질이 섞인 경우 일반 쓰레기로 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r10.png' %}"></td>
+                    <td><b>코팅된 종이(광고지, 전단지, 사진, 영수증 등) : </b>코팅된 종이는 재활용이 곤란하기 때문에 일반 쓰레기로 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r12.png' %}"></td>
+                    <td><b>작은 플라스틱(빨대) : </b>재질 구분이 어렵고 너무 작아 따로 선별하지 않기 때문에 일반쓰레기로 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r13.png' %}"></td>
+                    <td><b>깨진 유리 : </b>수거작업 시 안전사고 방지를 위하여 안전하게 감싼 후 일반 쓰레기로 버려야 한다. 만약 깨진 유리의 양이 많을 시 특수규격마대(불연성 전용봉투, 지자체 문의)로 배출한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r9.png' %}"></td>
+                    <td><b>옥수수 : </b>옥수수 알갱이는 음식물 쓰레기이지만 삶지 않은 생옥수수나 옥수수대와 껍질, 수염은 일반쓰레기로 분류된다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r8.png' %}"></td>
+                    <td><b>아보카도 : </b>아보카도 껍질과 씨는 일반쓰레기로 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r11.png' %}"></td>
+                    <td><b>과일 포장재 : </b>재활용이 어려우므로 일반쓰레기로 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r7.png' %}"></td>
+                    <td><b>보자기 & 부직포 가방 : </b>보자기나 부직포 가방의 섬유류는 재활용이 불가능하기 때문에 일반쓰레기로 버려야 한다.</td>
+                </tr>
+            </table>
+        </div>
+
+        <div class="box2">
+            <table width ="90%" height="auto" align = "center" >
+                <tr>
+                    <td class="cont"><img src="{% static 'images/web_how.png' %}"></td>
+                    <td class="cont2"><b>- 비닐</b></td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r6.png' %}"></td>
+                    <td><b>아이스팩 : </b>고흡수성수지(Gel 형태)의 유무로 일반 아이스팩과 물 아이스팩으로 나뉜다. 만약 고흡성수지가 들어있는 일반 아이스팩이라면 일반 쓰레기이고 물 아이스팩이라면 내용물을 버린 후 비닐로 버려야 한다. 이때 일반 아이스팩은 뜯지 말고 버려야한다.</td>
+                </tr>
+                <tr>
+                    <td class="cont"><img src="{% static 'images/web_how.png' %}"></td>
+                    <td class="cont2"><b>- 캔, 기타</b></td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r3.png' %}"></td>
+                    <td><b>부탄가스캔 : </b>부탄가스캔 내부에 내용물이 남아 있는 경우 수집/운반 과정에서 사고 위험이 있으므로, 완전히 사용하거나 통풍이 잘 되는 장소에서 노즐을 눌러 내용물을 완전히 제거한 후 캔으로 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r2.png' %}"></td>
+                    <td><b>의약품 : </b>약국, 보건소 등에 제출해야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r4.png' %}"></td>
+                    <td><b>식용유 : </b>음식물 쓰레기와 분리해 별도로 배출해야 하며, 하수구에 버리면 수질오염의 원인이 될 수 있으므로 가까운 행정복지센터에 식용유 전용 수거함의 위치를 문의한 후 지정된 곳에 버려야 한다.</td>
+                </tr>
+                <tr>
+                    <td class="cont"><img src="{% static 'images/web_how.png' %}"></td>
+                    <td class="cont2"><b>- 번외</b></td>
+                </tr>
+                <tr>
+                    <td class="nono"><img src="{% static 'recycles/r1.png' %}"></td>
+                    <td><b>과일 버리는 법 : </b>일반적으로 부드러운 과일 껍질이나 과육은 음식물 쓰레기로 버리고 단단한 과일 껍질이나 크고 단단한 씨, 줄기는 일반쓰레기로 버린다.</td>
+                </tr>
+                <tr>
+                    <td class="nono" class="justone"><img src="{% static 'recycles/r5.png' %}"></td>
+                    <td class="justone"><b>스티로폼 버리는 법 : </b>흰색 스티로폼은 재활용이 가능하다. 색깔이나 무늬가 있거나 과일 포장재일 경우 일반쓰레기로 버려야 한다.</td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    
+    <!-- 스마트폰 사이즈 일 때 분리수거 표시 -->
+    <div class="boxda">
+        <table width ="80%" height="auto" align = "center" >
+            <tr><td class="headname"><b>- 일반쓰레기</b></td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r15.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>알약 포장재 : </b>알약 포장재는 복수의 재질(플라스틱+알루미늄)로 만들어져 각각 분리하여 재활용은 가능하지만, 복수의 재질을 분리하기 어려우므로 일반쓰레기로 버린다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r16.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>음식물이 담긴 용기 : </b>세척되지 않은 용기는 재활용을 할 수 없으므로, 이물질 제거가 어렵다면 일반쓰레기로 버려야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r14.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>비닐 랩 : </b>일반쓰레기로 버려야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r17.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>플라스틱 칫솔 : </b>하나의 제품에 여러 재질이 섞인 경우 일반 쓰레기로 버려야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r10.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>코팅된 종이(광고지, 전단지, 사진, 영수증 등) : </b>코팅된 종이는 재활용이 곤란하기 때문에 일반 쓰레기로 버려야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r12.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>작은 플라스틱(빨대) : </b>재질 구분이 어렵고 너무 작아 따로 선별하지 않기 때문에 일반쓰레기로 버려야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r13.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>깨진 유리 : </b>수거작업 시 안전사고 방지를 위하여 안전하게 감싼 후 일반 쓰레기로 버려야 한다. 만약 깨진 유리의 양이 많을 시 특수규격마대(불연성 전용봉투, 지자체 문의)로 배출한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r9.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>옥수수 : </b>옥수수 알갱이는 음식물 쓰레기이지만 삶지 않은 생옥수수나 옥수수대와 껍질, 수염은 일반쓰레기로 분류된다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r8.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>아보카도 : </b>아보카도 껍질과 씨는 일반쓰레기로 버려야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r11.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>과일 포장재 : </b>재활용이 어려우므로 일반쓰레기로 버려야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r7.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>보자기 & 부직포 가방 : </b>보자기나 부직포 가방의 섬유류는 재활용이 불가능하기 때문에 일반쓰레기로 버려야 한다.<br><br><br></td></tr>
+    
+            <tr><td class="headname"><b>- 비닐</b></td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r6.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>아이스팩 : </b>고흡수성수지(Gel 형태)의 유무로 일반 아이스팩과 물 아이스팩으로 나뉜다. 만약 고흡성수지가 들어있는 일반 아이스팩이라면 일반 쓰레기이고 물 아이스팩이라면 내용물을 버린 후 비닐로 버려야 한다. 이때 일반 아이스팩은 뜯지 말고 버려야한다.<br><br><br></td></tr>
+    
+            <tr><td class="headname"><b>- 캔, 기타</b></td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r3.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>부탄가스캔 : </b>부탄가스캔 내부에 내용물이 남아 있는 경우 수집/운반 과정에서 사고 위험이 있으므로, 완전히 사용하거나 통풍이 잘 되는 장소에서 노즐을 눌러 내용물을 완전히 제거한 후 캔으로 버려야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r2.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>의약품 : </b>약국, 보건소 등에 제출해야 한다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r4.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>식용유 : </b>음식물 쓰레기와 분리해 별도로 배출해야 하며, 하수구에 버리면 수질오염의 원인이 될 수 있으므로 가까운 행정복지센터에 식용유 전용 수거함의 위치를 문의한 후 지정된 곳에 버려야 한다.<br><br><br></td></tr>
+            
+            <tr><td class="headname"><b>- 번외</b></td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r1.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>과일 버리는 법 : </b>일반적으로 부드러운 과일 껍질이나 과육은 음식물 쓰레기로 버리고 단단한 과일 껍질이나 크고 단단한 씨, 줄기는 일반쓰레기로 버린다.</td></tr>
+            <tr><td class="photophoto"><img src="{% static 'recycles/r5.png' %}"></td></tr>
+            <tr><td class="longcoment"><b>스티로폼 버리는 법 : </b>흰색 스티로폼은 재활용이 가능하다. 색깔이나 무늬가 있거나 과일 포장재일 경우 일반쓰레기로 버려야 한다.</td></tr>
+        </table>
+    </div>
+    
+</body>
+</html>

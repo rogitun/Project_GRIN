@@ -1,0 +1,20 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ui/login.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+            <a href="{% url 'home' %}"><img src="{% static 'images/web_logo.png' %}" height="42"></a>
+            <div class="one">
+                <p>비밀번호가 안전하게 변경 되었습니다!</p>
+            </div>
+            <a href="{% url 'login' %}"><input type="submit" value="로그인"></a>
+    </div>
+</body>
+</html>

@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ui/nav.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    <nav class="navbar">
+        <div class="n1">
+        <a class="navbar-logo" href="{% url 'home' %}"><img src="{% static 'images/web_logo.png' %}" height="42"></a>
+        <div class="search-box">
+            <form action="{% url 'search' %}" method="get" name="search">
+                {% csrf_token %}
+                <input class="search-txt" type="text" name="q" placeholder="지역을 입력하세요.예)강남">
+            </form>
+            <a class="search-btn" href="#"><img src="{% static 'images/scope.png' %}" height="17"></a>
+        </div>
+    </div>
+    <div class="n2">
+        <div class="navbar_button"><a href="{% url 'how' %}"><img src="{% static 'images/web_how.png' %}"></a></div>
+        {% if user.is_authenticated %}
+        <div class="navbar_button"><a href="{% url 'logout' %}"><img src="{% static 'images/logout.png' %}"></a></div>
+        {% else %}
+        <div class="navbar_button"><a href="{% url 'login' %}"><img src="{% static 'images/login2.png' %}"></a></div>
+        {% endif %}
+    </div>
+    </nav>
+    <!-- 450이하일때 네브바 -->
+    <nav class="navbarup">    
+        <a class="navbarup-logo" href="{% url 'home' %}"><img src="{% static 'images/app_logo.png' %}" height="32"></a>        
+        <div class="searchup-box">
+            <form action="{% url 'search' %}" method="get" name="search">
+                {% csrf_token %}
+            <input class="searchup-txt" type="text" name="q" placeholder="지역을 입력하세요.예)강남">
+        </form>
+            <a class="searchup-btn" href="#"><img src="{% static 'images/scope.png' %}" height="16"></a>
+        </div>
+    </nav>
+
+    <div class="navbardown">
+        <div class="navbardown_button"><a href="{% url 'how' %}"><img src="{% static 'images/web_how.png' %}" height="30"></a></div>
+        {% if user.is_authenticated %}
+        <div class="navbardown_button"><a href="{% url 'logout' %}"><img src="{% static 'images/logout.png' %}" height="30"></a></div>
+        {% else %}
+        <div class="navbardown_button"><a href="{% url 'login' %}"><img src="{% static 'images/login2.png' %}" height="30"></a></div>
+        {% endif %}
+    </div>
+</body>
+</html>
+

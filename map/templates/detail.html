@@ -1,0 +1,136 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ui/detail.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    {% include 'navbar.html' %}
+
+    <div class="map">
+        <!-- 맵 자리 -->
+        <div id="map" style="width:35%;height:100%;"></div>
+
+        <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07d62dfc076ff39c091e5da2ab4bf16b"></script>
+        <script>
+          var imageSrc = "{% static 'images/n.png' %}";
+          var url = 'http://127.0.0.1:8000/api/trashcan/' + "{{id}}"
+          var curlat = 37.5760;
+          var curlng = 126.9769;
+      
+          var mapContainer;
+          var map;
+          var imageSize;
+          function getLocation() {
+            curlat = 37.5760;
+            curlng = 126.9769;
+            mapContainer = document.getElementById('map'), // 지도를 표시할 div  
+              mapOption = {
+                center: new kakao.maps.LatLng(curlat, curlng), // 지도의 중심좌표
+                level: 2 // 지도의 확대 레벨
+              };  
+            map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+            imageSize = new kakao.maps.Size(24, 35);
+          }
+      
+          getLocation()
+          
+        //위치 정보 저장 배열
+        var positions;
+          //api 받아오기
+          fetch(url).then(res => {
+            console.log(res);
+            return res.json();
+          }
+          ).then(data => {
+              positions = {
+                ltlg: new kakao.maps.LatLng(data.tc_lat, data.tc_lng),
+            }//for문
+            map.setCenter(positions.ltlg)
+            displayMarker(positions);
+          });//fetch
+      
+          //마커 저장 배열
+          var overlays = [];
+      
+          //마커 표시 함수입니다.
+          function displayMarker(data) {
+            var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize);
+            var marker = new kakao.maps.Marker({
+              map: map,
+              position: data.ltlg,
+              image: markerImage,
+            });
+            var overlay = new kakao.maps.CustomOverlay({
+              yAnchor: 3,
+              position: marker.getPosition()
+            });
+          }
+        </script>
+
+    <div class="infor">
+      <p>{{post.tc_town}}</p>
+        <p>{{post.tc_desc}}</p>
+        <p><a href='tel:{{post.tc_phone}}'>{{post.tc_phone}}</a></p>
+        <a href="http://{{post.tc_link}}" target="_blank">구청 링크</a>
+    </div>
+
+<div class="box_right">
+<div class="want">
+    <div class="infor2">
+      <p>{{post.tc_town}}</p>
+      <p>{{post.tc_desc}}</p>
+     
+      <p><a href='tel:{{post.tc_phone}}'>{{post.tc_phone}}</a></p>
+      <p><a href="http://{{post.tc_link}}" target="_blank">구청 링크</a></p>
+    </div>
+  
+    <h3 class="big_cont">서울시를 위한 댓글을 남겨주세요!</h3>
+    {% if user.is_authenticated %}
+    <form action="" method="post">
+        {% csrf_token %}
+    <!-- <h2>댓글 입력</h2> -->
+    <label>{{form.label}}</label>
+    <div class="com_box">
+    {{form}}
+    <input type="submit" value="등록"/>
+    
+    </div>
+    </form>
+    {% else %}
+    <p>댓글 작성은 가입된 회원만 가능합니다.</p>
+     {% endif %}      
+     
+    <div class="plzscroll">
+    <div class="com_collec">
+      {% for review in post.review_set.all %} 
+        <div class="cont_padding">
+          <form action="{% url 'delete_review' review.id %}" method="post">
+            {% csrf_token %}
+          <div class="cont_name"><b>{{review.owner.nickname}}</b></div> 
+          <div class="cont_date">{{review.created}}</div>
+          {% if review.owner.id == user.profile.id %}
+          <button class="cont_button" type="submit"><b>X</b></button>
+          {% endif %}
+        </form>
+        </div>
+        <div class="cont_padding">
+          <div>{{review.body}}</div>
+        </div>
+        <hr>
+          <!-- <p>{{review.created}}</p> -->
+      {% endfor %}
+    </div>
+    </div>
+
+</div>
+</div>
+
+</body>
+
+</html>

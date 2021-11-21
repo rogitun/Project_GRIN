@@ -1,0 +1,55 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ui/login.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+<div class="box">
+    {% if page == 'register' %}
+    <form action="{% url 'register' %}" method="post">
+        {% csrf_token %} 
+        <a href="{% url 'home' %}"><img src="{% static 'images/web_logo.png' %}" height="42"></a>
+        
+        {% for field in form %}
+        <div class="one">
+        <label>{{field.label}} :</label>
+        </div>
+            <p>{{field}}</p> 
+        {% endfor %}
+        <input  type="submit" value="Sign  In" />
+        {{msg}}
+    </form>
+    {% else %}
+    <form action="" method="post">
+        {% csrf_token %}
+        <a href="{% url 'home' %}"><img src="{% static 'images/web_logo.png' %}" height="42"></a>
+        <div class="one">
+        <label for="">ID : </label>
+        <input type="text" name='username' placeholder="아이디 입력">
+        </div>     
+
+        <div class="one">
+        <label>Password : </label>
+        <input type="password" name="password" placeholder="비밀번호 입력">
+        </div>
+
+        <input type="submit" value="로그인">
+        <a href="{% url 'reset_password' %}">비밀번호 찾기</a>
+        <div class="wha">
+        계정이 없으신가요? <a href="{% url 'register' %}"> 회원가입</a>
+        </div>
+        {{msg}}
+        </div>
+    {% endif %}
+    </form>
+
+</div>
+
+</body>
+</html>

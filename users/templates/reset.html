@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'ui/login.css' %}?after">
+    <title>Document</title>
+</head>
+<body>
+    <div class="box">
+        
+        <form action="" method="post">
+            {% csrf_token %}
+            <a href="{% url 'home' %}"><img src="{% static 'images/web_logo.png' %}" height="42"></a>
+            <h3>새로운 비밀번호를 입력해주세요.</h3>
+            <div class="one">
+            {{form.as_p}}
+            </div>     
+            <input type="submit" value="확인">
+            </div>
+      
+        </form>
+    
+    </div>
+</body>
+</html>

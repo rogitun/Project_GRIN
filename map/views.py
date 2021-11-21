@@ -1,10 +1,11 @@
 from django.shortcuts import render,redirect
 from os import read
 from .models import *
-import csv
+import csv,os
 from enum import Enum
 from .forms import ReviewForm
 # Create your views here.
+from django.contrib.staticfiles.storage import staticfiles_storage
 
 class town_num(Enum):
     중로구 = 1
@@ -104,8 +105,9 @@ def search(request):
 
 #api_store 추가해야함
 def api_store(request):
-    path= 'C:\\Users\\kunyj\\Desktop\\Django\\SYU_GRIN\\grin\\static\\final1.csv'
-    
+    path= staticfiles_storage.url('final1.csv')
+    #path= 'C:\\Users\\kunyj\\Desktop\\Django\\SYU_GRIN\\grin\\static\\final1.csv'
+
     file=open(path)
     reader = csv.reader(file)
     print('-----',reader)
@@ -126,7 +128,7 @@ def api_store(request):
     return render(request,'api_store.html')
 
 def api_store2(request):
-    path= 'C:\\Users\\kunyj\\Desktop\\Django\\SYU_GRIN\\grin\\static\\final2.csv'
+    path= staticfiles_storage.url('final2.csv')
     
     file=open(path)
     reader = csv.reader(file)

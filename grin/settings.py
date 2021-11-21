@@ -131,6 +131,12 @@ USE_TZ = False
 CORS_ALLOW_CREDENTIALS = True
 CORS_ALLOW_ALL_ORIGINS = True
 
+CORS_ORIGIN_WHITELIST = [
+    "https://syugrin.herokuapp.com/",
+    "http://localhost:8080",
+    "http://127.0.0.1:8000"
+]
+
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 

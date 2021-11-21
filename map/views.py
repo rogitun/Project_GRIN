@@ -105,7 +105,7 @@ def search(request):
 
 #api_store 추가해야함
 def api_store(request):
-    path= static('final1.csv')
+    path= 'static/final1.csv'
     #path= 'C:\\Users\\kunyj\\Desktop\\Django\\SYU_GRIN\\grin\\static\\final1.csv'
 
     file=open(path)
@@ -128,7 +128,7 @@ def api_store(request):
     return render(request,'api_store.html')
 
 def api_store2(request):
-    path= static('final2.csv')
+    path= 'static/final2.csv'
     
     file=open(path)
     reader = csv.reader(file)

@@ -23,6 +23,7 @@
     var mapContainer;
     var map;
     var imageSize;
+    var myloc = [];
 
     function btnclick() {
       if (navigator.geolocation) { // GPS를 지원하면
@@ -32,6 +33,13 @@
           curlng = position.coords.longitude;
           var moveLatLon = new kakao.maps.LatLng(curlat, curlng);
           map.setCenter(moveLatLon)
+          var post = {
+            ltlg : moveLatLon,
+          };
+          for(let i =0;i<myloc.length;i++){
+            myloc[i].setMap(null);
+          }
+          MyLocation(post);
         });
       }
     }
@@ -77,6 +85,23 @@
         displayMarker(positions[i]);
       }//for문
     });//fetch
+
+    function MyLocation(data) {
+      var imagesc = "{% static 'images/redtc.png' %}";
+      var markerImage = new kakao.maps.MarkerImage(imagesc, imageSize);
+      var marker = new kakao.maps.Marker({
+        map: map,
+        position: data.ltlg,
+        image: markerImage,
+      });
+      var overlay = new kakao.maps.CustomOverlay({
+        yAnchor: 3,
+        position: marker.getPosition()
+      });
+      myloc.push(overlay);
+      overlay.setMap(map);
+    }
+
 
     //마커 저장 배열
     var overlays = [];

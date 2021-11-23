@@ -25,7 +25,7 @@ def register(request):
             else:
                 msg = "비밀번호를 더 안전하게 설정해주세요. 한영 혼용 및 8자 이상."
         else:
-            msg="이미 가입된 이메일 입니다."
+            msg="다른 이메일을 사용해주세요."
     context = {'form':form,'page':page,'msg':msg}
     return render(request,'login.html',context)
 

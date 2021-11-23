@@ -101,7 +101,7 @@ def search(request):
             return redirect('home')
                
 
-    return render(request,'sub.html',{"num":number})
+    return render(request,'sub.html',{"num":number,"sq":search_query})
 
 #api_store 추가해야함
 def api_store(request):

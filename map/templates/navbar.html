@@ -15,7 +15,7 @@
         <div class="search-box">
             <form action="{% url 'search' %}" method="get" name="search">
                 {% csrf_token %}
-                <input class="search-txt" type="text" name="q" placeholder="지역을 입력하세요.예)강남">
+                <input class="search-txt" type="text" name="q" placeholder="지역을 입력하세요.예)강남" value="{{sq}}">
             </form>
             <a class="search-btn" href="#"><img src="{% static 'images/scope.png' %}" height="17"></a>
         </div>
@@ -35,7 +35,7 @@
         <div class="searchup-box">
             <form action="{% url 'search' %}" method="get" name="search">
                 {% csrf_token %}
-            <input class="searchup-txt" type="text" name="q" placeholder="지역을 입력하세요.예)강남">
+            <input class="searchup-txt" type="text" name="q" placeholder="지역을 입력하세요.예)강남" value="{{sq}}">
         </form>
             <a class="searchup-btn" href="#"><img src="{% static 'images/scope.png' %}" height="16"></a>
         </div>

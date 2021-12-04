@@ -10,8 +10,9 @@
     <title>가로휴지통-상세</title>
 </head>
 <body>
-    {% include 'navbar.html' %}
+<!-- 쓰레기통의 상세 정보를 표시하는 페이지 입니다. -->
 
+    {% include 'navbar.html' %}
     <div class="map">
         <!-- 맵 자리 -->
         <div id="map" style="width:35%;height:100%;"></div>
@@ -19,7 +20,8 @@
         <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=07d62dfc076ff39c091e5da2ab4bf16b"></script>
         <script>
           var imageSrc = "{% static 'images/n.png' %}";
-          var url = 'https://syugrin.herokuapp.com/api/trashcan/' + "{{id}}"
+          var url = '쓰레기통 데이터를 가져올 주소를 입력하세요.' + "{{id}}"
+          //아래의 로컬 주소와 같이 입력하면 됩니다.
           //var url = '127.0.0.1:8000/api/trashcan/' + "{{id}}"
           var curlat = 37.5760;
           var curlng = 126.9769;

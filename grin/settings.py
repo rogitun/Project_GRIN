@@ -20,13 +20,12 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-(^*z2&*v+@0dn$sh!p6n68xeqi9@m*#11k)-*&3uiol2v1j+4g'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = ['*']
 
-SITE_ID=1
 # Application definition
 
 INSTALLED_APPS = [
@@ -78,14 +77,15 @@ WSGI_APPLICATION = 'grin.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+#데이터베이스 배포시 설정, postgres
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'grin',
-        'USER':'hansel',
-        'PASSWORD': 'ghkd0045',
-        'HOST':'database-1.cgvf4e26vukk.ap-northeast-2.rds.amazonaws.com',
-        'PORT':'5432',
+        'NAME': '',
+        'USER':'',
+        'PASSWORD': '',
+        'HOST':'',
+        'PORT':'',
     }
 }
 
@@ -113,6 +113,9 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# 쓰레기통 정보 등록, 삭제시 데이터가 많을 경우 필요함.
+# 쓰레기통 정보가 4천개 가량 됐기 때문에 5000으로 설정.
 DATA_UPLOAD_MAX_NUMBER_FIELDS = 5000
 
 # Internationalization
@@ -120,12 +123,14 @@ DATA_UPLOAD_MAX_NUMBER_FIELDS = 5000
 
 LANGUAGE_CODE = 'en-us'
 
+#시간대
 TIME_ZONE = 'Asia/Seoul'
 
 USE_I18N = True
 
 USE_L10N = True
 
+#한국 시간대를 위해 False
 USE_TZ = False
 
 CORS_ALLOW_CREDENTIALS = True
@@ -145,12 +150,14 @@ STATIC_DIR = [os.path.join(BASE_DIR,'static')]
 STATIC_ROOT = os.path.join(BASE_DIR,'staticfiles')
 MEDIA_ROOT = os.path.join(BASE_DIR,'static/images')
 
+#장고 smpt를 사용한 이메일 전송.
+#HOST_USER에 본인의 이메일을 작성하고 password엔 이메일 비밀번호(구글의 경우 앱비밀번호 별도로 생성 가능함)
 EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
-EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST = 'smtp.이메일(예: gmail.com)'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'syuniv.grin@gmail.com'
-EMAIL_HOST_PASSWORD = 'wziybyncoftllnvq'
+EMAIL_HOST_USER = ''
+EMAIL_HOST_PASSWORD = ''
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

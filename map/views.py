@@ -58,12 +58,15 @@ class town_num(Enum):
     강동구 = 25
     강동 =25 
 
+#메인페이지
 def home(request):
     return render(request,'main.html')
 
+#분리수거 방법
 def how(request):
     return render(request,'how.html')
 
+#쓰레기통 세부 정보 페이지 (댓글 포함)
 def detail(request,pk):
     post = TrashCan.objects.get(id=pk)
     form = ReviewForm()
@@ -80,6 +83,7 @@ def detail(request,pk):
     
     return render(request,'detail.html',{"post":post,"form":form,"id":pk})
 
+#댓글 삭제
 def deleteReview(request,pk):
     profile = request.user.profile
     review = profile.review_set.get(id=pk)
@@ -89,6 +93,7 @@ def deleteReview(request,pk):
         review.delete()
         return redirect('detail',pk=key)
 
+#지역구별 검색
 def search(request):
     search_query=''
     number = 0
@@ -103,10 +108,10 @@ def search(request):
 
     return render(request,'sub.html',{"num":number,"sq":search_query})
 
-#api_store 추가해야함
+#DB에 쓰레기통을 저장하는 함수. 배포시엔 포함 X, 테스트용도로만 사용
 def api_store(request):
     path= 'static/final1.csv'
-    #path= 'C:\\Users\\kunyj\\Desktop\\Django\\SYU_GRIN\\grin\\static\\final1.csv'
+    
 
     file=open(path)
     reader = csv.reader(file)
@@ -127,6 +132,7 @@ def api_store(request):
     TrashCan.objects.bulk_create(list)
     return render(request,'api_store.html')
 
+#위 함수와 동일하지만 테스트 용도로 2개로 나눴습니다.
 def api_store2(request):
     path= 'static/final2.csv'
     

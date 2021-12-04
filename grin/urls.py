@@ -26,6 +26,7 @@ urlpatterns = [
     path('api/',include('api.urls')),
     path('users/',include('users.urls')),
     
+    #아래 path는 비밀번호 재설정을 위한 path 입니다.
     path('reset_password/',auth_views.PasswordResetView.as_view(template_name="reset_password.html"),
          name='reset_password'),
     path('reset_password_sent/',auth_views.PasswordResetDoneView.as_view(template_name="sent.html"),
